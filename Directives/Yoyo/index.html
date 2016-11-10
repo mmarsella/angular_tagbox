@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="yoyoApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Directives!">
+  <title>Directives!</title>
+</head>
+<body ng-controller="YoyoController">
+	<!-- 
+		So, how does data about an individual yoyo get passed from our controller to our directive?
+
+		1) We iterate over each yoyo in the controller's yoyos array, storing the data in yoyoFromRepeat.
+
+		2) Each yoyoFromRepeat gets passed into our custom directive via the yoyo-attribute attribute.
+		
+		3) In the html for our custom directive, we have access to yoyoFromRepeat's data in yoyoInDirective. This conndtion is possible because we told our directive that yoyoInDirective should correspond to whatever we pass into the directive via the yoyo-attribute attribute.
+	 -->
+
+  <gs-yoyo-details yoyo-attribute="yoyoFromRepeat" ng-repeat="yoyoFromRepeat in view.yoyos"></gs-yoyo-details>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+11/8/2016
+
+1)  Learn how to write an Angular Library / Directive?
+2)  Learn how to write custom directives / Service / factory.  --> Need to figure out exactly what it is that we are exporting.

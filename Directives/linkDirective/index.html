@@ -1,0 +1,18 @@
+<!-- 
+The gsChangeBackground directive could be more customizable. Change the code so that the user of the directive can set an attribute on the tag that specifies what the new background color should be on mouse enter. Also, add the ability for the user to change the text color on mouse enter as well. If no new text color is specified, the text color should not change. Lastly, our directive only makes sense in one context. Add a restriction to the directive so that it can only be used in the correct way. You'll have to figure out which way that is! 
+-->
+
+
+
+
+
+<!DOCTYPE html>
+<html ng-app="mouseOverDirectiveApp">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js" type="text/javascript"></script>
+<script src="app.js" type="text/javascript"></script>
+</head>
+<body>
+  <div gs-change-background style="background-color: red" newColor="green" mark='hi'>Hello World!</div>
+</body>
+</html>

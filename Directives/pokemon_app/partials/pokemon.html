@@ -1,0 +1,10 @@
+<div ng-repeat="poke in pokeArray">
+  <h2>{{poke.info.name}}</h2>
+  <img ng-show="poke.img" src="{{poke.img}}">
+  <br>
+  <span>Type: </span>
+  <span ng-repeat="type in poke.info.types">{{type.type.name}} </span>
+  <br>
+  <span>Moves: </span>
+  <span ng-repeat="move in poke.info.moves | limitTo:5">{{move.move.name}}, </span>
+</div>
