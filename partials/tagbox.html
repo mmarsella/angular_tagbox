@@ -1,0 +1,31 @@
+<h2>INSIDE OF TAGBOX!</h2>
+
+<p>The config is: {{config}}</p>
+
+<div ng-repeat="keyword in data track by $index" class="">
+  <div>
+     <label class="needsclick">
+        <input type="checkbox" value="{{keyword}}" ng-click="toggleSelection(keyword)"  />
+        <span class="fa fa-check"></span>{{keyword}}</label>
+  </div>
+  <br ng:show="(index+1)%3==0" />
+</div>
+
+
+<!-- &gt is the > symbol. -->
+
+<!--  
+
+RE-POPULATE FEATURE
+ng-checked="orgInfo.keywords.indexOf(keyword) &gt; -1"
+
+This was used to keep a box checked off when an NGO came back to their page and the array that the checkboxes are tied to has values that match what the input fields ask for....
+
+
+DISABLE FEATURE
+ng-disabled="orgInfo.keywords.length &gt;= 10" class="needsclick"
+
+Cannot allow user to click any more boxes if 10 are clicked
+
+ -->
+

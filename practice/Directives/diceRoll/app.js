@@ -41,6 +41,7 @@ app.directive('diceRoller', function(){
 		    */
 
 			element.on('click', function(){
+				console.log("CLICK");
 				scope.number = scope.roll();
 				scope.$apply();					
 			})

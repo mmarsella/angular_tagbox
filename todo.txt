@@ -2,3 +2,21 @@
 
 1)  Learn how to write an Angular Library / Directive?
 2)  Learn how to write custom directives / Service / factory.  --> Need to figure out exactly what it is that we are exporting.
+
+
+11/29/2016
+
+TODO:
+
+- Figure out how to return the array / bind the directives array back to the form that it is wrapped in.
+
+- Implement the tagbox
+
+- Figure out if this needs to be its own element or an attribute on an element.
+
+- How utilize config data.
+
+- Figure out if we need to use link vs. controller.
+
+-  How to package this as an npm module.
+

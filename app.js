@@ -1,0 +1,43 @@
+var app = angular.module('tagboxDemo', []);
+
+app.directive('smTagbox', function(){
+	return{
+		controller: function($scope){
+			console.log('directive scope: ', $scope);
+
+			if(!$scope.keywords){
+			  $scope.keywords = [];
+			}
+
+			// toggle selection for a given topic by name
+			$scope.toggleSelection = function toggleSelection(keyword) {
+			  var idx = $scope.keywords.indexOf(keyword);
+			  // is currently selected
+			  if (idx > -1) {
+			    $scope.keywords.splice(idx, 1);
+			  }
+			  // is newly selected
+			  else {
+			    $scope.keywords.push(keyword);
+			  }
+
+			  console.log('keywords', $scope.keywords);
+			};
+
+
+		},
+		templateUrl: './partials/tagbox.html',
+		link: function(scope, element, attrs){
+			console.log('link scope', scope);
+		},
+		scope:{
+			config: "=",
+			data: "="
+		}
+
+	}
+
+
+
+
+})

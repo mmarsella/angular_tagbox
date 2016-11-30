@@ -46,7 +46,7 @@ app.controller("pokeController", function($scope,$location,$http){
 app.directive('mmPokeDetails', function(){
   return {
     scope:{
-      pokeArray:"="
+      thisPokeArray:"=pokeArray"
     },
     templateUrl: 'partials/pokemon.html'
   };
