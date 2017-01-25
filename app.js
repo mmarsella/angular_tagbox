@@ -8,6 +8,7 @@ app.directive('smTagbox', function(){
 			if(!$scope.keywords){
 			  $scope.keywords = [];
 			}
+			$scope.removeTag = removeTag;
 
 			// toggle selection for a given topic by name
 			$scope.toggleSelection = function toggleSelection(keyword) {
@@ -23,6 +24,12 @@ app.directive('smTagbox', function(){
 
 			  console.log('keywords', $scope.keywords);
 			};
+
+			function removeTag(tag){
+				var index = $scope.keywords.indexOf(tag);
+				$scope.keywords.splice(index, 1);
+				console.log('keywords', $scope.keywords);
+			}
 
 
 		},

@@ -2,13 +2,25 @@
 
 <p>The config is: {{config}}</p>
 
-<div ng-repeat="keyword in data track by $index" class="">
-  <div>
-     <label class="needsclick">
-        <input type="checkbox" value="{{keyword}}" ng-click="toggleSelection(keyword)"  />
-        <span class="fa fa-check"></span>{{keyword}}</label>
-  </div>
-  <br ng:show="(index+1)%3==0" />
+<div class="container keywordSelect">
+   <div class="row">
+      <div class="col-sm-11">
+         <strong>Selected Tags (maxiumum 10):</strong>
+         <div class="well well-lg tagWell">
+            <span ng-repeat="tag in keywords" class="tag label label-info selectedList">{{tag}}&nbsp
+               <span ng-click="removeTag(tag)">&nbsp x</span>
+            </span>
+         </div>
+      </div>
+   </div>
+
+	<div ng-repeat="keyword in data track by $index" class="">
+	  <div>
+	     <label class="needsclick">
+	        <input type="checkbox" ng-click="toggleSelection(keyword)" ng-checked="keywords.indexOf(keyword) > -1" />
+	        <span class="fa fa-check"></span>{{keyword}}</label>
+	  </div>
+	</div>
 </div>
 
 
