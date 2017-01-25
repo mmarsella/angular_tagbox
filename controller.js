@@ -8,6 +8,12 @@ app.controller("demoController", function($scope, $http){
 		boxColor: "red"
 	}
 
+	$scope.checkboxData = [];
+
+	$scope.$watch('checkboxData',function(){
+		console.log('checkboxData', $scope.checkboxData);
+	})
+
  
 
   $http.get('./npKeywords.json').then(function(response) {

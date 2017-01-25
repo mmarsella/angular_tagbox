@@ -20,3 +20,18 @@ TODO:
 
 -  How to package this as an npm module.
 
+
+
+
+
+
+
+
+1/24/2017
+
+TODO:  
+
+- Figure out how to target the nested <span> inside of the directive to change color of tag based off of config.
+- How to structure the config
+- Style the directive
+- Learn how to export it and include in a new Angular project as a dependency

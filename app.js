@@ -2,44 +2,58 @@ var app = angular.module('tagboxDemo', []);
 
 app.directive('smTagbox', function(){
 	return{
-		controller: function($scope){
-			console.log('directive scope: ', $scope);
+		templateUrl: './partials/tagbox.html',
+		scope:{
+			config: "=",
+			data: "=",
+			returnedArray: "=",
+		},
+		link: function(scope, element, attrs){
 
-			if(!$scope.keywords){
-			  $scope.keywords = [];
+
+
+
+			console.log('scope', scope);
+			console.log('attrs', attrs);
+			console.log('element', element);
+			console.log('element theTag', element.find('span'));
+
+
+
+
+			debugger
+
+			scope.removeTag = removeTag;
+			scope.toggleSelection = toggleSelection;
+
+
+			if(!scope.keywords){
+			  scope.keywords = [];
 			}
-			$scope.removeTag = removeTag;
+			scope.returnedArray = scope.keywords;
 
-			// toggle selection for a given topic by name
-			$scope.toggleSelection = function toggleSelection(keyword) {
-			  var idx = $scope.keywords.indexOf(keyword);
+			function toggleSelection(keyword) {
+			  var idx = scope.keywords.indexOf(keyword);
 			  // is currently selected
 			  if (idx > -1) {
-			    $scope.keywords.splice(idx, 1);
+			    scope.keywords.splice(idx, 1);
 			  }
 			  // is newly selected
 			  else {
-			    $scope.keywords.push(keyword);
+			    scope.keywords.push(keyword);
 			  }
 
-			  console.log('keywords', $scope.keywords);
+			  console.log('keywords', scope.keywords);
 			};
 
+
 			function removeTag(tag){
-				var index = $scope.keywords.indexOf(tag);
-				$scope.keywords.splice(index, 1);
-				console.log('keywords', $scope.keywords);
+				var index = scope.keywords.indexOf(tag);
+				scope.keywords.splice(index, 1);
+				console.log('keywords', scope.keywords);
 			}
 
 
-		},
-		templateUrl: './partials/tagbox.html',
-		link: function(scope, element, attrs){
-			console.log('link scope', scope);
-		},
-		scope:{
-			config: "=",
-			data: "="
 		}
 
 	}
